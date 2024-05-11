@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  width: 100vw;
+  height: 100%;
+  background: #0c111b;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+}
+
+/*Navbar*/
+.navbar {
+  width: 100vw;
+  height: 12vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 4%;
+  display: flex;
+  background: #0c111b;
+  z-index: 9;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.brand-logo {
+  width: 50px;
+  height: 45px;
+  transform: scale(170%);
+}
+
+.nav-links {
+  list-style: none;
+  margin-top: 1.15em;
+  display: flex;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.9;
+  margin-left: 3.4em;
+  transition: all ease-in 0.3s;
+}
+
+.nav-items a:hover {
+  color: #20bbd6;
+  opacity: 1;
+}
+
+
+
+.left-container {
+  display: flex;
+}
+
+.right-container {
+  margin-top: 0.9em;
+  display: flex;
+  padding-right: 6%;
+  align-items: center;
+}
+
+.user-name {
+  display: flex;
+  color: #fff;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  margin-left: 14px;
+}
+
+
+#menu-icon {
+  color: #fff;
+  opacity: 0.9;
+  font-size: 35px;
+  cursor: pointer;
+  display: none;
+}
+
+
+
+@media(max-width:700px) {
+  .nav-links.active {
+    display: flex;
+
+  }
+
+
+  #menu-icon {
+    display: flex;
+    margin-left: 10px;
+  }
+
+  .nav-links {
+    position: absolute;
+    background: #0c111b;
+    top: 10vh;
+    height: 80vh;
+    width: 50vw;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0;
+    right: 0;
+    display: none;
+  }
+
+  .nav-links a {
+    margin: 0px;
+  }
+
+}
+
+/*Carrossel Slider */
+.carousel-container {
+  margin-top: 12vh;
+  width: 100vw;
+  height: 50vh;
+  padding: 20px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.carousel {
+  display: flex;
+  width: 92%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+  flex: 0 0 auto;
+  margin-right: 30px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  transition: 1s;
+  overflow: hidden;
+  
+}
+
+.slider img {
+  width: 70%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+
+}
+
+.slider-content {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #030b17 80%, #0c111b00);
+  color: #fff;
+  z-index: 2;
+  
+}
+
+.movie-title {
+  padding-left: 50px;
+  text-transform: capitalize;
+  margin-top: 80px;
+
+}
+
+.movie-desc {
+  width: 80%;
+  line-height: 30px;
+  padding-left: 50px;
+  margin-top: 30px;
+  opacity: 0.8;
+  overflow: hidden; /* Adicione overflow: hidden; */
+  text-overflow: ellipsis;
+}
+
+/*Video Cards*/
+.cards {
+  margin-top: 5vh;
+  height: fit-content;
+  width: 100vw;
+}
+
+.video-card-container {
+  position: relative;
+  width: 92%;
+  height: 10vw;
+  margin: auto;
+  display: flex;
+  margin-bottom: 2px;
+  justify-content: space-between;
+}
+
+.video-card {
+  position: relative;
+  min-width: calc(80%/5 - 10px);
+  width: calc(80%/5 - 10px);
+  height: 80%;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #030b17;
+}
+
+.video-card-image,
+.card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-video {
+  position: absolute;
+
+}
+
+.video-card:hover .video-card-image {
+  display: none;
+}
+
+
+@media(max-width:950px) {
+  .video-card {
+    min-width: calc(90%/5 - 10px);
+    width: calc(90%/5 - 10px);
+    height: 90%;
+  }
+
+}
+
+@media(max-width:790px) {
+  .video-card {
+    min-width: calc(95%/5 - 10px);
+    width: calc(95%/5 - 10px);
+    height: 95%;
+  }
+
+  .carousel-container {
+    margin-top: 12vh;
+    width: 100vw;
+    height: 75vh;
+    padding: 20px 0;
+    overflow: hidden;
+  }
+  
+
+
+}
+
+@media(max-width:700px) {
+  .video-card-container {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr); /* Define três linhas iguais */
+    grid-template-columns: repeat(2, 1fr); /* Define duas colunas iguais */
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .video-card {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+
+/*Entretenimento*/
+.title-section{
+  color: #fff;
+  opacity: 0.9;
+  padding-left: 4%;
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: 500;
+  }
