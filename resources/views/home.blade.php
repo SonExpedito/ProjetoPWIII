@@ -83,51 +83,116 @@
             <button class="nxt-btn"><img src="/img/nxt.png" alt=""></button>
 
             <div class="media-container">
-                <div class="media">
-                    <img src="/img/poster1.png" alt="" class="media-img">
-                    <div class="media-info">
-                        <h2 class="media-name">SDASD</h2>
-                        <h6 class="media-desc">DASDASD</h6>
-                        <div class="icons">
-                            <button class="watch-btn">Assistir</button>
-                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
-                        </div>
-                    </div>
-                </div>
+                @if (count($filmes) > 0)
+                @csrf
+                @foreach ($filmes as $film)
+                <!-- Se houver filmes disponíveis, itere sobre eles -->
                 <div class="media">
                     <img src="/img/poster2.png" alt="" class="media-img">
                     <div class="media-info">
-                        <h2 class="media-name">SDASD</h2>
-                        <h6 class="media-desc">DASDASD</h6>
+                        <h2 class="media-name">{{$film->titulo}}</h2>
+                        <h6 class="media-desc">{{$film->descricao}}</h6>
+                        <div class="icons">
+                            <button class="watch-btn">Assistir</button>
+                            <!-- Verificar se $film está definido antes de acessar suas propriedades -->
+                            @if (isset($film->id))
+                            <a href="/favoritar/{{$film->id}}" class="favorite"><i class='bx bx-heart'></i></a>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @else
+                <!-- Se não houver filmes disponíveis, exiba uma mensagem alternativa -->
+                <div class="media">
+                    <img src="/img/poster1.png" alt="" class="media-img">
+                    <div class="media-info">
+                        <h2 class="media-name">TENTE</h2>
+                        <h6 class="media-desc">De Novo</h6>
                         <div class="icons">
                             <button class="watch-btn">Assistir</button>
                             <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
                         </div>
                     </div>
                 </div>
+                @endif
+            </div>
+        </div>
 
+
+        <!----------------------FAVORITOS---------------------------------------------------------------------------------->
+        <h1 class="title-section">Favoritos</h1>
+        <div class="media-list">
+            <button class="prev-btn"><img src="/img/pre.png" alt=""></button>
+            <button class="nxt-btn"><img src="/img/nxt.png" alt=""></button>
+
+            <div class="media-container">
+                @csrf
+                @if (count($filmes) > 0)
+                @foreach ($filmes as $film)
+                <!-- Verificar se o filme é favorito antes de exibi-lo -->
+                @if ($film->favorito)
                 <div class="media">
                     <img src="/img/poster3.png" alt="" class="media-img">
                     <div class="media-info">
-                        <h2 class="media-name">SDASD</h2>
-                        <h6 class="media-desc">DASDASD</h6>
+                        <h2 class="media-name">{{$film->titulo}}</h2>
+                        <h6 class="media-desc">{{$film->descricao}}</h6>
                         <div class="icons">
                             <button class="watch-btn">Assistir</button>
-                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
+                            <a href="/desfavoritar/{{$film->id}}" class="favorite"><i class='bx bxs-heart'></i></a>
                         </div>
                     </div>
                 </div>
-
+                @endif
+                @endforeach
+                @endif
             </div>
         </div>
-        <h1 class="title-section">Favoritos</h1>
-    </section>
+
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="logo">
+                    <a class="logo__link" href="/"></a>
+                </div>
+                <nav class="footer__navigation">
+                    <ul class="footer-menu">
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link" href="/">Política de Privacidade</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link" href="/">Proteção de Dados no Brasil</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link" href="/">Contrato de Assinatura</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link" href="/">Ajuda</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link" href="/">Dispositivos Compatíveis</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link" href="/">Sobre a Disney+</a>
+                        </li>
+                        <li class="footer-menu__item">
+                            <a class="footer-menu__link" href="/">Anúncios Personalizados</a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="footer__about">
+                    Disney+ é um serviço pago, baseado em assinatura e sujeito a termos e condições. O serviço Disney+ é comercializado por The Walt Disney Company (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas, 12.551, 12.555, 12.559, Piso 10, São Paulo/SP - CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20
+                </p>
+                <p class="footer__copyright">
+                    &copy; Disney. Todos os direitos reservados.
+                </p>
+            </div>
+        </footer>
 
 
-    <script src="/JS/Navbar.js"></script>
-    <script src="/JS/Slider.js"></script>
-    <script src="/JS/Carrossel.js"></script>
-    <script src="/JS/cardvideo.js"></script>
+        <script src="/JS/Navbar.js"></script>
+        <script src="/JS/Slider.js"></script>
+        <script src="/JS/Carrossel.js"></script>
+        <script src="/JS/cardvideo.js"></script>
 
 </body>
 

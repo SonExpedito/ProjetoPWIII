@@ -19,7 +19,7 @@ class FilmesController extends Controller
         $filmes = Filmes::All();
         $filmes->update(
             [
-                'favorito'=> $req -> Favorito,
+                'favorito'=> 1,
             ]
         );
 
@@ -27,10 +27,16 @@ class FilmesController extends Controller
         return $this->index();
     }
 
-    public function excluir(Request $req)
+    public function desfavoritar(Request $req)
     {
-        $filmes = Filmes::find($req->id);
-        $filmes->delete();
+        $filmes = Filmes::All();
+        $filmes->update(
+            [
+                'favorito'=> 0,
+            ]
+        );
+
+
         return $this->index();
     }
 }

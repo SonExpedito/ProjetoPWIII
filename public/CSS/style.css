@@ -443,3 +443,75 @@ body {
 .media-list:hover  .nxt-btn img{
   opacity: 1;
 }
+
+
+/*Footer*/
+.footer {
+  background-color: #090b13;
+  padding: 2.3rem 0 2.6rem;
+  text-align: center;
+}
+
+.footer__wrapper {
+  margin: 0 auto;
+  max-width: 47rem;
+  width: 100%;
+}
+
+.footer-menu__link, 
+.footer__about, 
+.footer__copyright {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+.footer__about {
+  line-height: 1.5;
+  margin:0 1.8rem 1.5rem;
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-menu__item {
+  margin: 1.5rem 0;
+}
+
+.footer-menu__link {
+  padding: 0 1rem;
+  transition: color .3s;
+}
+
+.footer-menu__link:hover {
+  color: #20bbd6;
+}
+
+.logo__link {
+  background: url('../img/disney-hotstar-logo-dark.svg') no-repeat;
+  background-position: center;
+  background-size: 105%;
+  display: inline-block;
+  height: 5.2rem;
+  width: 6.9rem;
+}
+
+@media screen and (max-width: 1024px){
+  .logo__link {
+    height: 5.2rem;
+    width: 6.9rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+      padding-left: 3rem;
+      padding-right: 3rem;
+  }
+
+  .footer-menu {
+      justify-content: center;
+  }
+}
