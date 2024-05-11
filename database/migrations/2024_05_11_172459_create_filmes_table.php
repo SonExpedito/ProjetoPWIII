@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('filmes', function (Blueprint $table) {
             $table->id();
+            $table->string('titulo');
+            $table->string('descricao');
+            $table->string('image');
+            $table->boolean('favorito')->default(false); //Falso como padrão
+            $table->string('video');
             $table->timestamps();
         });
     }

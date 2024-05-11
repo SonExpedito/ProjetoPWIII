@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Filmes extends Model
 {
+    protected $fillable = [
+        'titulo',
+        'image',
+        'descricao',
+        'favorito',
+        'video'
+    ];
+
     use HasFactory;
 }
