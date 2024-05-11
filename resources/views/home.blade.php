@@ -89,9 +89,8 @@
                         <h2 class="media-name">SDASD</h2>
                         <h6 class="media-desc">DASDASD</h6>
                         <div class="icons">
-                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
                             <button class="watch-btn">Assistir</button>
-
+                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
                         </div>
                     </div>
                 </div>
@@ -101,9 +100,8 @@
                         <h2 class="media-name">SDASD</h2>
                         <h6 class="media-desc">DASDASD</h6>
                         <div class="icons">
-                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
                             <button class="watch-btn">Assistir</button>
-
+                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
                         </div>
                     </div>
                 </div>
@@ -114,13 +112,12 @@
                         <h2 class="media-name">SDASD</h2>
                         <h6 class="media-desc">DASDASD</h6>
                         <div class="icons">
-                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
                             <button class="watch-btn">Assistir</button>
-
+                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
                         </div>
                     </div>
                 </div>
-             
+
             </div>
         </div>
         <h1 class="title-section">Favoritos</h1>
