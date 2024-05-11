@@ -161,7 +161,7 @@ body {
   left: 0;
   transition: 1s;
   overflow: hidden;
-  
+
 }
 
 .slider img {
@@ -180,7 +180,7 @@ body {
   background: linear-gradient(to right, #030b17 80%, #0c111b00);
   color: #fff;
   z-index: 2;
-  
+
 }
 
 .movie-title {
@@ -196,7 +196,8 @@ body {
   padding-left: 50px;
   margin-top: 30px;
   opacity: 0.8;
-  overflow: hidden; /* Adicione overflow: hidden; */
+  overflow: hidden;
+  /* Adicione overflow: hidden; */
   text-overflow: ellipsis;
 }
 
@@ -267,16 +268,19 @@ body {
     padding: 20px 0;
     overflow: hidden;
   }
-  
+
 
 
 }
 
 @media(max-width:700px) {
   .video-card-container {
+    height: 50vh;
     display: grid;
-    grid-template-rows: repeat(3, 1fr); /* Define três linhas iguais */
-    grid-template-columns: repeat(2, 1fr); /* Define duas colunas iguais */
+    grid-template-rows: repeat(3, 1fr);
+    /* Define três linhas iguais */
+    grid-template-columns: repeat(2, 1fr);
+    /* Define duas colunas iguais */
     gap: 20px;
     justify-items: center;
   }
@@ -285,15 +289,156 @@ body {
     width: 150px;
     height: 100px;
   }
+
 }
 
 
 /*Entretenimento*/
-.title-section{
+
+.title-section {
   color: #fff;
   opacity: 0.9;
   padding-left: 4%;
   text-transform: capitalize;
   font-size: 22px;
   font-weight: 500;
-  }
+}
+
+.media-list {
+  width: 100vw;
+  height: 40vh;
+  position: relative;
+  margin: 10px 0 20px;
+
+}
+
+.media-container {
+  position: absolute;
+  width: 92%;
+  padding-left: 6%;
+  height: 30vh;
+  display: flex;
+  margin: 0 auto;
+  overflow-x: auto;
+  overflow-y: visible;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+.media-container::-webkit-scrollbar {
+  display: none;
+}
+
+.media {
+  position: relative;
+  min-width: 170px;
+  width: 170px;
+  height: 220px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 10px;
+  transition: 0.5s;
+  background: #030b17;
+}
+
+.media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media:hover {
+  transform: scale(1.1);
+}
+
+.media:hover .media-info:hover{
+  opacity: 1;
+}
+
+.media-info {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(4,8,15,0),#192133 90%);
+  padding: 27px;
+  transition: 0.5s;
+}
+
+.media-name{
+  color: #fff;
+  font-size: 15px;
+  font-family: 500;
+  text-transform: capitalize;
+  margin-top: 60%;
+}
+
+
+.media-desc{
+  color: #fff;
+  opacity: 0.8;
+  margin: 5px 0;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+
+.icons{
+  display: flex;
+  margin-top: 25px;
+}
+
+.favorite{
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+}
+
+.watch-btn{
+  display: flex;
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.watch-btn:hover{
+  color: #fff;
+}
+
+.prev-btn, .nxt-btn{
+  position: absolute;
+  top: 0;
+  width: 4%;
+  height: 100%;
+  z-index: 4;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn{
+  left: 0;
+  background: linear-gradient(to right, #0c111b 0%,#0c111b);
+}
+
+.nxt-btn{
+  right: 0;
+  background: linear-gradient(to right, #0c111b 0%,#0c111b);
+}
+
+.prev-btn img, .nxt-btn img{
+  width: 15px;
+  height: 20px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.media-list:hover .prev-btn img,
+.media-list:hover  .nxt-btn img{
+  opacity: 1;
+}

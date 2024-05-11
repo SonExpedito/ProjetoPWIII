@@ -37,7 +37,7 @@
     <section class="banner">
         <div class="carousel-container">
             <div class="carousel">
-               <!-- <div class="slider">
+                <!-- <div class="slider">
                     <div class="slider-content">
                         <h1 class="movie-title">LUCA</h1>
                         <p class="movie-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis a iste nobis unde fuga ea, assumenda dolorum enim mollitia necessitatibus consequatur doloremque veniam vel perferendis eveniet harum nisi, rem aliquam!</p>
@@ -78,14 +78,60 @@
 
     <section class="entretenimento">
         <h1 class="title-section">Lançamentos</h1>
+        <div class="media-list">
+            <button class="prev-btn"><img src="/img/pre.png" alt=""></button>
+            <button class="nxt-btn"><img src="/img/nxt.png" alt=""></button>
+
+            <div class="media-container">
+                <div class="media">
+                    <img src="/img/poster1.png" alt="" class="media-img">
+                    <div class="media-info">
+                        <h2 class="media-name">SDASD</h2>
+                        <h6 class="media-desc">DASDASD</h6>
+                        <div class="icons">
+                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
+                            <button class="watch-btn">Assistir</button>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <img src="/img/poster2.png" alt="" class="media-img">
+                    <div class="media-info">
+                        <h2 class="media-name">SDASD</h2>
+                        <h6 class="media-desc">DASDASD</h6>
+                        <div class="icons">
+                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
+                            <button class="watch-btn">Assistir</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media">
+                    <img src="/img/poster3.png" alt="" class="media-img">
+                    <div class="media-info">
+                        <h2 class="media-name">SDASD</h2>
+                        <h6 class="media-desc">DASDASD</h6>
+                        <div class="icons">
+                            <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
+                            <button class="watch-btn">Assistir</button>
+
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+        </div>
         <h1 class="title-section">Favoritos</h1>
     </section>
 
 
     <script src="/JS/Navbar.js"></script>
+    <script src="/JS/Slider.js"></script>
     <script src="/JS/Carrossel.js"></script>
     <script src="/JS/cardvideo.js"></script>
-    
+
 </body>
 
 </html>
