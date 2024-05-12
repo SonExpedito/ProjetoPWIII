@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('descricao');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->boolean('favorito')->default(false); //Falso como padrão
             $table->string('video');
             $table->timestamps();

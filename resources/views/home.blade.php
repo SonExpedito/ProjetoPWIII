@@ -88,7 +88,7 @@
                 @foreach ($filmes as $film)
                 <!-- Se houver filmes disponíveis, itere sobre eles -->
                 <div class="media">
-                    <img src="/img/poster2.png" alt="" class="media-img">
+                    <img src="/img/posters/{{$film->image}}.png" alt="" class="media-img">
                     <div class="media-info">
                         <h2 class="media-name">{{$film->titulo}}</h2>
                         <h6 class="media-desc">{{$film->descricao}}</h6>
@@ -96,10 +96,18 @@
                             <button class="watch-btn">Assistir</button>
                             <!-- Verificar se $film está definido antes de acessar suas propriedades -->
                             @if (isset($film->id))
+
+                            @if ($film->favorito)
+                            <form action="/desfavoritar/{{$film->id}}" method="post">
+                                @csrf <!-- Adicione isso se estiver usando Laravel para evitar erros de CSRF -->
+                                <button type="submit" class="favorite"><i class='bx bxs-heart'></i></button>
+                            </form>
+                            @else
                             <form action="/favoritar/{{$film->id}}" method="post">
                                 @csrf <!-- Adicione isso se estiver usando Laravel para evitar erros de CSRF -->
                                 <button type="submit" class="favorite"><i class='bx bx-heart'></i></button>
                             </form>
+                            @endif
                             @endif
                         </div>
                     </div>
@@ -108,10 +116,10 @@
                 @else
                 <!-- Se não houver filmes disponíveis, exiba uma mensagem alternativa -->
                 <div class="media">
-                    <img src="/img/poster1.png" alt="" class="media-img">
+                    <img src="/img/posters/erro.png" alt="" class="media-img">
                     <div class="media-info">
-                        <h2 class="media-name">TENTE</h2>
-                        <h6 class="media-desc">De Novo</h6>
+                        <h2 class="media-name">TENTE NOVAMENTE</h2>
+                        <h6 class="media-desc">Adicione conteúdo ao banco de dados</h6>
                         <div class="icons">
                             <button class="watch-btn">Assistir</button>
                             <a href="#" class="favorite"><i class='bx bx-heart'></i></a>
@@ -136,7 +144,7 @@
                 <!-- Verificar se o filme é favorito antes de exibi-lo -->
                 @if ($film->favorito)
                 <div class="media">
-                    <img src="/img/poster3.png" alt="" class="media-img">
+                    <img src="/img/posters/{{$film->image}}.png" alt="" class="media-img">
                     <div class="media-info">
                         <h2 class="media-name">{{$film->titulo}}</h2>
                         <h6 class="media-desc">{{$film->descricao}}</h6>
