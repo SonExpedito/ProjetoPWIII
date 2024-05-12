@@ -11,7 +11,7 @@
 
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
 
-    <title>Dag-Media</title>
+    <title>Disney+</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
 
         <div class="right-container">
             <a href="#" class="user-name"></a>
-            <img src="/img/perfil.png" alt="" class="profile-avatar">
+            <img src="/img/default.png" alt="" class="profile-avatar">
             <div class="bx bx-menu" id="menu-icon"></div>
 
         </div>
