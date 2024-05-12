@@ -396,6 +396,27 @@ body {
   text-decoration: none;
   color: #fff;
   margin-left: 20%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite:hover{
+  animation: shake 2s linear;
+}
+
+@keyframes shake{
+  30%{
+    transform: rotateZ(17deg);
+  }
+
+  60%{
+    transform: rotateZ(-17deg);
+  }
+  
+  100%{
+    transform: rotateZ(0deg);
+  }
 }
 
 .watch-btn{

@@ -14,28 +14,18 @@ class FilmesController extends Controller
         return view('home')->with("filmes", $filmes);
     }
 
-    public function favoritar(Request $req)
+    public function favoritar($id)
     {
-        $filmes = Filmes::All();
-        $filmes->update(
-            [
-                'favorito'=> 1,
-            ]
-        );
-
+        $filme = Filmes::findOrFail($id); // Encontra o filme com o ID fornecido
+        $filme->update(['favorito' => 1]); // Atualiza o campo 'favorito' para 1
 
         return $this->index();
     }
 
-    public function desfavoritar(Request $req)
+    public function desfavoritar($id)
     {
-        $filmes = Filmes::All();
-        $filmes->update(
-            [
-                'favorito'=> 0,
-            ]
-        );
-
+        $filme = Filmes::findOrFail($id); // Encontra o filme com o ID fornecido
+        $filme->update(['favorito' => 0]); // Atualiza o campo 'favorito' para 0
 
         return $this->index();
     }

@@ -96,7 +96,10 @@
                             <button class="watch-btn">Assistir</button>
                             <!-- Verificar se $film está definido antes de acessar suas propriedades -->
                             @if (isset($film->id))
-                            <a href="/favoritar/{{$film->id}}" class="favorite"><i class='bx bx-heart'></i></a>
+                            <form action="/favoritar/{{$film->id}}" method="post">
+                                @csrf <!-- Adicione isso se estiver usando Laravel para evitar erros de CSRF -->
+                                <button type="submit" class="favorite"><i class='bx bx-heart'></i></button>
+                            </form>
                             @endif
                         </div>
                     </div>
@@ -139,7 +142,10 @@
                         <h6 class="media-desc">{{$film->descricao}}</h6>
                         <div class="icons">
                             <button class="watch-btn">Assistir</button>
-                            <a href="/desfavoritar/{{$film->id}}" class="favorite"><i class='bx bxs-heart'></i></a>
+                            <form action="/desfavoritar/{{$film->id}}" method="post">
+                                @csrf <!-- Adicione isso se estiver usando Laravel para evitar erros de CSRF -->
+                                <button type="submit" class="favorite"><i class='bx bxs-heart'></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>

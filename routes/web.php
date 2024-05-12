@@ -5,8 +5,8 @@ use App\Http\Controllers\FilmesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get("/",[FilmesController::class, "index"]); 
-Route::post("/favoritar/{id}", [FilmesController::class, "favoritar"]);
-Route::post("/desfavoritar/{id}", [FilmesController::class, "desfavoritar"]);
+Route::get("/favoritar/{id}", [FilmesController::class, "favoritar"]);
+Route::get("/desfavoritar/{id}", [FilmesController::class, "desfavoritar"]);
 
 /*Route::get("/cadastrar",[ClienteController::class, "cadastro"]); 
 Route::get("/listar",[ClienteController::class, "listar"]);
