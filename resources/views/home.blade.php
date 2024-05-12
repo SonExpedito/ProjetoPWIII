@@ -27,7 +27,7 @@
         </div>
 
         <div class="right-container">
-            <a href="#" class="user-name">Olá, Alex</a>
+            <a href="#" class="user-name"></a>
             <img src="/img/perfil.png" alt="" class="profile-avatar">
             <div class="bx bx-menu" id="menu-icon"></div>
 
@@ -193,7 +193,28 @@
         <script src="/JS/Slider.js"></script>
         <script src="/JS/Carrossel.js"></script>
         <script src="/JS/cardvideo.js"></script>
+        <script>
+            // Função para selecionar aleatoriamente itens de uma matriz
+            function escolherAleatoriamente(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
 
+            // Função para alterar o nome e a imagem do perfil
+            window.onload = function alterarNomeEImagem() {
+                var nomes = ['Alex', 'Diogo', 'Gabriel', 'Giovannna', 'Guilherme'];
+                var imagens = ['/img/perfil.png', '/img/perfil2.png', '/img/perfil3.png'];
+
+                var novoNome = escolherAleatoriamente(nomes);
+                var novaImagem = escolherAleatoriamente(imagens);
+
+                // Atualizar elementos HTML com o nome e a imagem selecionados aleatoriamente
+                var userName = document.querySelector('.user-name');
+                var profileAvatar = document.querySelector('.profile-avatar');
+
+                userName.textContent = 'Olá, ' + novoNome;
+                profileAvatar.src = novaImagem;
+            }
+        </script>
 </body>
 
 </html>
