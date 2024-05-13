@@ -54,24 +54,24 @@
         <div class="video-card-container">
             <div class="video-card">
                 <img src="/img/disney.png" alt="" class="video-card-image">
-                <video src="/videos/disney.mp4" class="card-video" loop autoplay></video>
+                <video src="/videos/disney.mp4" class="card-video" loop autoplay muted></video>
             </div>
             <div class="video-card">
                 <img src="/img/pixar.png" alt="" class="video-card-image">
-                <video src="/videos/pixar.mp4" class="card-video" loop autoplay></video>
+                <video src="/videos/pixar.mp4" class="card-video" loop autoplay muted></video>
             </div>
             <div class="video-card">
                 <img src="/img/star-wars.png" alt="" class="video-card-image">
-                <video src="/videos/star-war.mp4" class="card-video" loop autoplay></video>
+                <video src="/videos/star-war.mp4" class="card-video" loop autoplay muted></video>
             </div>
             <div class="video-card">
                 <img src="/img/marvel.png" alt="" class="video-card-image">
-                <video src="/videos/marvel.mp4" class="card-video" loop autoplay></video>
+                <video src="/videos/marvel.mp4" class="card-video" loop autoplay muted></video>
             </div>
 
             <div class="video-card">
                 <img src="/img/geographic.png" alt="" class="video-card-image">
-                <video src="/videos/geographic.mp4" class="card-video" loop autoplay></video>
+                <video src="/videos/geographic.mp4" class="card-video" loop autoplay muted></video>
             </div>
         </div>
     </section>
