@@ -19,7 +19,7 @@ class FilmesController extends Controller
         $filme = Filmes::findOrFail($id); // Encontra o filme com o ID fornecido
         $filme->update(['favorito' => 1]); // Atualiza o campo 'favorito' para 1
 
-        return $this->index();
+        return redirect()->back();
     }
 
     public function desfavoritar($id)
@@ -27,6 +27,6 @@ class FilmesController extends Controller
         $filme = Filmes::findOrFail($id); // Encontra o filme com o ID fornecido
         $filme->update(['favorito' => 0]); // Atualiza o campo 'favorito' para 0
 
-        return $this->index();
+        return redirect()->back();
     }
 }

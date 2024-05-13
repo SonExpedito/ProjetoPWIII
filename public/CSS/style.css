@@ -123,6 +123,7 @@ body {
     margin: 0;
     right: 0;
     display: none;
+    border-radius: 5px;
   }
 
   .nav-links a {
@@ -388,7 +389,8 @@ body {
 
 .icons{
   display: flex;
-  margin-top: 11%;
+  position: absolute;
+  top: 81%;
 }
 
 .favorite{
