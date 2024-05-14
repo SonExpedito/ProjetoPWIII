@@ -17,10 +17,10 @@
 <body>
     <nav class="navbar">
         <div class="left-container">
-            <img src="/img/disney-hotstar-logo-dark.svg" alt="" class="brand-logo">
+            <img src="/img/disneybrand.svg" alt="" class="brand-logo">
             <ul class="nav-links">
                 <li class="nav-items"><a href="#">Home</a></li>
-                <li class="nav-items"><a href="#">Filmes</a></li>
+                <li class="nav-items"><a href="/cadastrar">Filmes</a></li>
                 <li class="nav-items"><a href="#">Series</a></li>
                 <li class="nav-items"><a href="#">Videos</a></li>
             </ul>
@@ -88,7 +88,7 @@
                 @foreach ($filmes as $film)
                 <!-- Se houver filmes disponíveis, itere sobre eles -->
                 <div class="media">
-                    <img src="/img/posters/{{$film->image}}.png" alt="" class="media-img">
+                    <img src="/img/filmes/{{$film->image}}" alt="" class="media-img">
                     <div class="media-info">
                         <h2 class="media-name">{{$film->titulo}}</h2>
                         <h6 class="media-desc">{{$film->descricao}}</h6>
@@ -144,7 +144,7 @@
                 <!-- Verificar se o filme é favorito antes de exibi-lo -->
                 @if ($film->favorito)
                 <div class="media">
-                    <img src="/img/posters/{{$film->image}}.png" alt="" class="media-img">
+                    <img src="/img/filmes/{{$film->image}}" alt="" class="media-img">
                     <div class="media-info">
                         <h2 class="media-name">{{$film->titulo}}</h2>
                         <h6 class="media-desc">{{$film->descricao}}</h6>
@@ -215,7 +215,7 @@
 
             // Função para alterar o nome e a imagem do perfil
             window.onload = function alterarNomeEImagem() {
-                var nomes = ['Alex', 'Diogo', 'Gabriel', 'Giovannna', 'Guilherme'];
+                var nomes = ['Alex', 'Diogo', 'Gabriel', 'Giovanna', 'Guilherme'];
                 var imagens = ['/img/perfil.png', '/img/perfil2.png', '/img/perfil3.png'];
 
                 var novoNome = escolherAleatoriamente(nomes);

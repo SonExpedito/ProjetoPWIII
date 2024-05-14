@@ -4,14 +4,20 @@ use App\Http\Controllers\FilmesController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get("/",[FilmesController::class, "index"]); 
+/**Redirecionamento */
+Route::get("/", [FilmesController::class, "index"]);
+Route::get("/cadastrar", [FilmesController::class, "cadastrar"]);
+Route::get("/editar/{id}", [FilmesController::class, "editar"]);
+Route::get("/listartabela", [FilmesController::class,"listartabela"]);
+
+
+/*Funções */
+Route::post("/adicionar", [FilmesController::class, "adicionar"]);
+Route::post("/atualizar/{id}", [FilmesController::class, "atualizar"]);
+Route::get("/excluir/{id}", [FilmesController::class, "excluir"]);
+
+
 Route::post("/favoritar/{id}", [FilmesController::class, "favoritar"]);
 Route::post("/desfavoritar/{id}", [FilmesController::class, "desfavoritar"]);
 
 
-/*Route::get("/cadastrar",[ClienteController::class, "cadastro"]); 
-Route::get("/listar",[ClienteController::class, "listar"]);
-Route::post("/adicionarCliente", [ClienteController::class, "adicionar"]);
-Route::get("/editar/{id}",[ClienteController::class,"editar"]);
-Route::post("/atualizar/{id}",[ClienteController::class,"atualizar"]);
-Route::get("/excluir/{id}",[ClienteController::class,"excluir"]);*/

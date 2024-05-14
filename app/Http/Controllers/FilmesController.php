@@ -29,4 +29,83 @@ class FilmesController extends Controller
 
         return redirect()->back();
     }
+
+    public function cadastrar()
+    {
+        return view('cadastrar');
+    }
+
+
+    public function listartabela()
+    {
+        $filmes = Filmes::All();
+        return view('listar')->with("filmes", $filmes);
+    }
+
+    public function adicionar(Request $req)
+    {
+        $filme = new Filmes();
+        $filme->titulo = $req->titulo;
+        $filme->image = $req->image;
+        $filme->descricao = $req->descricao;
+        $filme->video = $req->video;
+
+        if ($req->hasFile('image') && $req->file('image')->isValid()) {
+
+            $requestImage = $req->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/filmes'), $imageName);
+
+            $filme->image = $imageName;
+        }
+
+
+
+        $filme->save();
+        return redirect('/');
+    }
+
+    public function editar($id)
+    {
+        $filme = Filmes::find($id);
+        return view('editar')->with("filmes", $filme);
+    }
+
+    public function atualizar(Request $req, $id)
+    {
+        $filme = Filmes::find($id);
+
+        // Verifica se um novo arquivo de imagem foi enviado e se é válido
+        if ($req->hasFile('image') && $req->file('image')->isValid()) {
+            $requestImage = $req->image;
+            $extension = $requestImage->extension();
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            // Move a nova imagem para a pasta de destino
+            $requestImage->move(public_path('img/filmes'), $imageName);
+
+            // Atualiza o nome da imagem no banco de dados
+            $filme->image = $imageName;
+        }
+
+        // Atualiza os outros campos do filme
+        $filme->update([
+            'titulo' => $req->titulo,
+            'descricao' => $req->descricao,
+            'video' => $req->video
+        ]);
+
+        return redirect('/');
+    }
+
+    public function excluir($id)
+    {
+        $filme = Filmes::find($id);
+        $filme->delete();
+        return redirect()->back();
+    }
 }
