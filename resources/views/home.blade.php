@@ -216,7 +216,7 @@
             // Função para alterar o nome e a imagem do perfil
             window.onload = function alterarNomeEImagem() {
                 var nomes = ['Alex', 'Diogo', 'Gabriel', 'Giovanna', 'Guilherme'];
-                var imagens = ['/img/perfil.png', '/img/perfil2.png', '/img/perfil3.png'];
+                var imagens = ['/img/perfil.png', '/img/perfil2.png', '/img/perfil3.png','/img/perfil4.png','/img/perfil5.png'];
 
                 var novoNome = escolherAleatoriamente(nomes);
                 var novaImagem = escolherAleatoriamente(imagens);
