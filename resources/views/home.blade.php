@@ -21,7 +21,7 @@
             <ul class="nav-links">
                 <li class="nav-items"><a href="#">Home</a></li>
                 <li class="nav-items"><a href="/cadastrar">Filmes</a></li>
-                <li class="nav-items"><a href="#">Series</a></li>
+                <li class="nav-items"><a href="/listartabela">Series</a></li>
                 <li class="nav-items"><a href="#">Videos</a></li>
             </ul>
         </div>
