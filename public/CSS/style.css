@@ -310,7 +310,7 @@ body {
   height: 40vh;
   position: relative;
   margin: 10px 0 20px;
-
+  margin-bottom: 0px;
 }
 
 .media-container {
@@ -352,7 +352,7 @@ body {
   transform: scale(1.1);
 }
 
-.media:hover .media-info:hover{
+.media:hover .media-info:hover {
   opacity: 1;
 }
 
@@ -364,12 +364,12 @@ body {
   top: 0;
   left: 0;
   z-index: 2;
-  background: linear-gradient(to bottom, rgba(4,8,15,0),#192133 90%);
+  background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
   padding-left: 5%;
   transition: 0.5s;
 }
 
-.media-name{
+.media-name {
   color: #fff;
   font-size: 15px;
   font-family: 500;
@@ -378,7 +378,7 @@ body {
 }
 
 
-.media-desc{
+.media-desc {
   color: #fff;
   opacity: 0.8;
   margin: 5px 0;
@@ -387,13 +387,13 @@ body {
 }
 
 
-.icons{
+.icons {
   display: flex;
   position: absolute;
   top: 81%;
 }
 
-.favorite{
+.favorite {
   display: flex;
   text-decoration: none;
   color: #fff;
@@ -403,25 +403,25 @@ body {
   cursor: pointer;
 }
 
-.favorite:hover{
+.favorite:hover {
   animation: shake 2s linear;
 }
 
-@keyframes shake{
-  30%{
+@keyframes shake {
+  30% {
     transform: rotateZ(17deg);
   }
 
-  60%{
+  60% {
     transform: rotateZ(-17deg);
   }
-  
-  100%{
+
+  100% {
     transform: rotateZ(0deg);
   }
 }
 
-.watch-btn{
+.watch-btn {
   display: flex;
   text-transform: capitalize;
   background: none;
@@ -431,11 +431,12 @@ body {
   cursor: pointer;
 }
 
-.watch-btn:hover{
+.watch-btn:hover {
   color: #fff;
 }
 
-.prev-btn, .nxt-btn{
+.prev-btn,
+.nxt-btn {
   position: absolute;
   top: 0;
   width: 4%;
@@ -445,17 +446,18 @@ body {
   cursor: pointer;
 }
 
-.prev-btn{
+.prev-btn {
   left: 0;
-  background: linear-gradient(to right, #0c111b 0%,#0c111b);
+  background: linear-gradient(to right, #0c111b 0%, #0c111b);
 }
 
-.nxt-btn{
+.nxt-btn {
   right: 0;
-  background: linear-gradient(to right, #0c111b 0%,#0c111b);
+  background: linear-gradient(to right, #0c111b 0%, #0c111b);
 }
 
-.prev-btn img, .nxt-btn img{
+.prev-btn img,
+.nxt-btn img {
   width: 15px;
   height: 20px;
   opacity: 0;
@@ -463,7 +465,7 @@ body {
 }
 
 .media-list:hover .prev-btn img,
-.media-list:hover  .nxt-btn img{
+.media-list:hover .nxt-btn img {
   opacity: 1;
 }
 
@@ -481,8 +483,8 @@ body {
   width: 100%;
 }
 
-.footer-menu__link, 
-.footer__about, 
+.footer-menu__link,
+.footer__about,
 .footer__copyright {
   font-size: 1.1rem;
   font-weight: 300;
@@ -491,7 +493,7 @@ body {
 
 .footer__about {
   line-height: 1.5;
-  margin:0 1.8rem 1.5rem;
+  margin: 0 1.8rem 1.5rem;
 }
 
 .footer-menu {
@@ -521,7 +523,7 @@ body {
   width: 6.9rem;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .logo__link {
     height: 5.2rem;
     width: 6.9rem;
@@ -530,11 +532,11 @@ body {
 
 @media screen and (max-width: 1024px) {
   .footer {
-      padding-left: 3rem;
-      padding-right: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .footer-menu {
-      justify-content: center;
+    justify-content: center;
   }
 }
