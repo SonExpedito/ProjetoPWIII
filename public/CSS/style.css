@@ -379,6 +379,7 @@ body {
 
 
 .media-desc {
+  max-width: 160px;
   color: #fff;
   opacity: 0.8;
   margin: 5px 0;
