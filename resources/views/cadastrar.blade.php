@@ -19,7 +19,7 @@
             <div class="col-12">
                 <div class="d-flex align-items-center justify-content-between">
                     <a href="/" class="logo-link">
-                        <img src="/img/disneybrand2.svg" alt="Logo" class="logo">
+                        <img src="/img/moonbrand2.png" alt="Logo" class="logo">
                     </a>
                     <div class="text-center flex-grow-1">
                         <h1>Formulário</h1>

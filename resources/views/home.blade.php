@@ -11,13 +11,13 @@
 
     <link rel="icon" type="image/x-icon" href="/img/logo.png">
 
-    <title>Disney+</title>
+    <title>Moon+</title>
 </head>
 
 <body>
     <nav class="navbar">
         <div class="left-container">
-            <img src="/img/disneybrand.svg" alt="" class="brand-logo">
+            <img src="/img/moonbrand.png" alt="" class="brand-logo">
             <ul class="nav-links">
                 <li class="nav-items"><a href="#">Home</a></li>
                 <li class="nav-items"><a href="/cadastrar">Filmes</a></li>

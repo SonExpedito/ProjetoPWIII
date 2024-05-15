@@ -10,7 +10,7 @@
 body {
   width: 100vw;
   height: 100%;
-  background: #0c111b;
+  background: #0b0c0d ;
   position: relative;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
@@ -25,7 +25,7 @@ body {
   left: 0;
   padding: 0 4%;
   display: flex;
-  background: #0c111b;
+  background: #cfcccc ;
   z-index: 9;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +35,7 @@ body {
 .brand-logo {
   width: 50px;
   height: 45px;
-  transform: scale(170%);
+  transform: scale(263%) translateY(5%);
 }
 
 .nav-links {
@@ -46,7 +46,7 @@ body {
 
 .nav-items a {
   text-decoration: none;
-  color: #fff;
+  color: #000;
   opacity: 0.9;
   margin-left: 3.4em;
   transition: all ease-in 0.3s;
@@ -72,7 +72,7 @@ body {
 
 .user-name {
   display: flex;
-  color: #fff;
+  color: #000;
   opacity: 0.9;
   text-transform: uppercase;
   font-weight: 700;
@@ -89,7 +89,7 @@ body {
 
 
 #menu-icon {
-  color: #fff;
+  color: #000;
   opacity: 0.9;
   font-size: 35px;
   cursor: pointer;
@@ -112,7 +112,7 @@ body {
 
   .nav-links {
     position: absolute;
-    background: #0c111b;
+    background: #cfcccc;
     top: 10vh;
     height: 80vh;
     width: 50vw;
@@ -178,7 +178,7 @@ body {
   position: absolute;
   width: 50%;
   height: 100%;
-  background: linear-gradient(to right, #030b17 80%, #0c111b00);
+  background: linear-gradient(to right, #030b17  80%, #0c111b00);
   color: #fff;
   z-index: 2;
 
@@ -364,7 +364,7 @@ body {
   top: 0;
   left: 0;
   z-index: 2;
-  background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+  background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #0c111b 90%);
   padding-left: 5%;
   transition: 0.5s;
 }
@@ -448,12 +448,12 @@ body {
 
 .prev-btn {
   left: 0;
-  background: linear-gradient(to right, #0c111b 0%, #0c111b);
+  background: linear-gradient(to right, #0b0c0d 0%, #0b0c0d);
 }
 
 .nxt-btn {
   right: 0;
-  background: linear-gradient(to right, #0c111b 0%, #0c111b);
+  background: linear-gradient(to right, #0b0c0d 0%, #0b0c0d);
 }
 
 .prev-btn img,
@@ -472,7 +472,7 @@ body {
 
 /*Footer*/
 .footer {
-  background-color: #090b13;
+  background-color: #060606 ;
   padding: 2.3rem 0 2.6rem;
   text-align: center;
 }
@@ -515,12 +515,13 @@ body {
 }
 
 .logo__link {
-  background: url('../img/disneybrand2.svg') no-repeat;
+  background: url('../img/moonbrand.png') no-repeat;
   background-position: center;
   background-size: 105%;
   display: inline-block;
   height: 5.2rem;
   width: 6.9rem;
+  transform: scale(210%);
 }
 
 @media screen and (max-width: 1024px) {

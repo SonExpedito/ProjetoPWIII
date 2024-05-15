@@ -33,10 +33,10 @@
             <div class="col-12">
                 <div class="d-flex align-items-center justify-content-between">
                     <a href="/" class="logo-link">
-                        <img src="/img/disneybrand2.svg" alt="Logo" class="logo">
+                        <img src="/img/moonbrand2.png" alt="Logo" class="logo">
                     </a>
                     <div class="text-center flex-grow-1">
-                        <h1>Tabela de conteúdos Disney+</h1>
+                        <h1>Tabela de conteúdos Moon+</h1>
                         <h3 class="subtitle"><small>Todos os conteúdos disponíveis</small></h3>
                     </div>
                 </div>

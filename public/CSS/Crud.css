@@ -1,5 +1,5 @@
 body {
-    background-color: #0c111b;
+    background-color: #0b0c0d;
     color: white;
 }
 
@@ -10,6 +10,7 @@ body {
 .logo {
     height: 80px;
     position: absolute;
+    transform: scale(200%);
 }
 
 .logo-link {
