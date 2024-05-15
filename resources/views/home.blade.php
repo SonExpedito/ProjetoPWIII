@@ -22,7 +22,7 @@
                 <li class="nav-items"><a href="#">Home</a></li>
                 <li class="nav-items"><a href="/cadastrar">Filmes</a></li>
                 <li class="nav-items"><a href="/listartabela">Series</a></li>
-                <li class="nav-items"><a href="#">Videos</a></li>
+                <li class="nav-items"><a href="#">Kids</a></li>
             </ul>
         </div>
 
@@ -93,7 +93,7 @@
                         <h2 class="media-name">{{$film->titulo}}</h2>
                         <h6 class="media-desc">{{$film->descricao}}</h6>
                         <div class="icons">
-                            <button class="watch-btn">Assistir</button>
+                            <button class="watch-btn" onclick="openPopup('{{ $film->titulo }}', '{{ $film->descricao }}', '{{ $film->video }}')">Assistir</button>
                             <!-- Verificar se $film está definido antes de acessar suas propriedades -->
                             @if (isset($film->id))
 
@@ -130,6 +130,17 @@
             </div>
         </div>
 
+        <!-- Pop-up de Detalhes do Filme -->
+        <div id="popup" class="popup" style="display:none;">
+            <h2>Detalhes do Filme</h2>
+            <p class="popupTitulo1"><strong>Título:</strong> <span id="popupTitulo"></span></p>
+
+
+            <a href="#" id="popupVideo" target="_blank">Assistir Trailer</a>
+            <p><strong>Descrição:</strong> <span id="popupDescricao"></span></p>
+            <button onclick="closePopup()">Fechar</button>
+        </div>
+
 
         <!----------------------FAVORITOS---------------------------------------------------------------------------------->
         <h1 class="title-section">Favoritos</h1>
@@ -149,7 +160,7 @@
                         <h2 class="media-name">{{$film->titulo}}</h2>
                         <h6 class="media-desc">{{$film->descricao}}</h6>
                         <div class="icons">
-                            <button class="watch-btn">Assistir</button>
+                            <button class="watch-btn" onclick="openPopup('{{ $film->titulo }}', '{{ $film->descricao }}', '{{ $film->video }}')">Assistir</button>
                             <form action="/desfavoritar/{{$film->id}}" method="post">
                                 @csrf <!-- Adicione isso se estiver usando Laravel para evitar erros de CSRF -->
                                 <button type="submit" class="favorite"><i class='bx bxs-heart'></i></button>
@@ -194,15 +205,15 @@
                     </ul>
                 </nav>
                 <p class="footer__about">
-                    Disney+ é um serviço pago, baseado em assinatura e sujeito a termos e condições. O serviço Disney+ é comercializado por The Walt Disney Company (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas, 12.551, 12.555, 12.559, Piso 10, São Paulo/SP - CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20
+                    Moon+ é um serviço pago, baseado em assinatura e sujeito a termos e condições. O serviço Disney+ é comercializado por The Walt Disney Company (Brasil) Ltda., World Trade Center, Av. Das Nações Unidas, 12.551, 12.555, 12.559, Piso 10, São Paulo/SP - CEP 04578-903, Brasil e CNPJ/M 73.042.962/0004-20
                 </p>
                 <p class="footer__copyright">
-                    &copy; Disney. Todos os direitos reservados.
+                    &copy; Moon. Todos os direitos reservados.
                 </p>
             </div>
         </footer>
 
-
+        <script src="/JS/Pop-Up.js"></script>
         <script src="/JS/Navbar.js"></script>
         <script src="/JS/Slider.js"></script>
         <script src="/JS/Carrossel.js"></script>
@@ -216,7 +227,7 @@
             // Função para alterar o nome e a imagem do perfil
             window.onload = function alterarNomeEImagem() {
                 var nomes = ['Alex', 'Diogo', 'Gabriel', 'Giovanna', 'Guilherme'];
-                var imagens = ['/img/perfil.png', '/img/perfil2.png', '/img/perfil3.png','/img/perfil4.png','/img/perfil5.png'];
+                var imagens = ['/img/perfil.png', '/img/perfil2.png', '/img/perfil3.png', '/img/perfil4.png', '/img/perfil5.png'];
 
                 var novoNome = escolherAleatoriamente(nomes);
                 var novaImagem = escolherAleatoriamente(imagens);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\Models\Filmes;
 
@@ -79,20 +80,22 @@ class FilmesController extends Controller
     {
         $filme = Filmes::find($id);
 
-        // Verifica se um novo arquivo de imagem foi enviado e se é válido
         if ($req->hasFile('image') && $req->file('image')->isValid()) {
             $requestImage = $req->image;
             $extension = $requestImage->extension();
             $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-
-            // Move a nova imagem para a pasta de destino
             $requestImage->move(public_path('img/filmes'), $imageName);
 
-            // Atualiza o nome da imagem no banco de dados
+            if ($filme->image) {
+                $oldImagePath = public_path('img/filmes') . '/' . $filme->image;
+                if (File::exists($oldImagePath)) {
+                    File::delete($oldImagePath);
+                }
+            }
+
             $filme->image = $imageName;
         }
 
-        // Atualiza os outros campos do filme
         $filme->update([
             'titulo' => $req->titulo,
             'descricao' => $req->descricao,
@@ -105,7 +108,22 @@ class FilmesController extends Controller
     public function excluir($id)
     {
         $filme = Filmes::find($id);
+
+        if ($filme->image) {
+            $imagePath = public_path('img/filmes') . '/' . $filme->image;
+            if (File::exists($imagePath)) {
+                File::delete($imagePath);
+            }
+        }
+
         $filme->delete();
         return redirect()->back();
+    }
+
+    public function show($id)
+    {
+        $filme = Filmes::find($id);
+
+        return view('filme.show', ['filme' => $filme]);
     }
 }
